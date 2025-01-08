@@ -15,4 +15,7 @@ export default interface BookModel {
   publishedDate: string;
   thumbnail?: string;
   overview?: string;
+  readingProgress?: string;
+  startedReadingOn?: Date;
+  finishedReadingOn?: Date;
 }

@@ -20,7 +20,10 @@ import {
   ModalFooter,
   ModalHeader,
   Radio,
+  Select,
   ThemeType,
+  SelectPropsConverter,
+  SelectNative,
 } from "basicui";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -152,7 +155,7 @@ const Details = (props: Props) => {
       <Modal isOpen={isOpen} onClose={onCancel}>
         <ModalHeader onClose={onCancel} heading="Edit book details" />
         <ModalBody>
-          <form>
+          <form className="form-two-column">
             <Input
               name="chapterCount"
               value={state?.chapterCount}
@@ -160,6 +163,32 @@ const Details = (props: Props) => {
               type="number"
               label="Chapter count"
               autoFocus
+            />
+            <SelectNative
+              options={SelectPropsConverter.optionsFromSimpleList([
+                "read",
+                "currently-reading",
+                "to-read",
+              ])}
+              name="readingProgress"
+              // value={state?.readingProgress}
+              value={state?.readingProgress}
+              onInput={handleChange}
+              label="Reading progress"
+            />
+            <Input
+              name="startedReadingOn"
+              value={state?.startedReadingOn}
+              onInput={handleChange}
+              type="date"
+              label="Started reading"
+            />
+            <Input
+              name="finishedReadingOn"
+              value={state?.finishedReadingOn}
+              onInput={handleChange}
+              type="date"
+              label="Finished reading"
             />
           </form>
         </ModalBody>

@@ -13,7 +13,7 @@ import SectionModel from "../../../model/SectionModel";
 import { getSectionByReference } from "../BookSectionPage/service";
 import { getBookGenerationLog } from "../BookPage/service";
 import BookLogModel from "../../../model/BookLogModel";
-
+import SectionSeed from "./SectionSeed";
 interface Props {
   space: string;
 }
@@ -143,9 +143,16 @@ const BookSectionDetailPage = (props: Props) => {
   return (
     <>
       <div className="note-page page-animate">
-        <Topbar title={`Bookdetail` || ""} />
+        <Topbar title={bookSection?.title || ""} />
 
         <MainSection className="book-section-detail-page">
+          {bookSection && (
+            <SectionSeed
+              onRefresh={_refreshSection}
+              section={bookSection}
+              space={props.space}
+            />
+          )}
           {bookSection &&
             bookSectionDetailList?.map((item) => (
               <SectionContainer

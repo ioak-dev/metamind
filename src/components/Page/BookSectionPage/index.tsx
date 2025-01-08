@@ -111,6 +111,7 @@ const BookSectionPage = (props: Props) => {
       pollingRef.current = null;
       isPolling.current = false;
     }
+    setIsLoading(false);
   };
 
   const closePopup = (isBookAdded: boolean) => {
@@ -129,8 +130,10 @@ const BookSectionPage = (props: Props) => {
     generateSections(props.space, params.bookref || "", authorization).then(
       (response: any) => {
         // _refreshSections();
-        _refreshLog();
-        setIsLoading(false);
+        // _refreshLog();
+        // setIsLoading(false);
+    _refreshSections();
+    _startPolling();
       }
     );
   };

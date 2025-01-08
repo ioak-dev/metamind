@@ -151,12 +151,12 @@ const SectionContainer = (props: Props) => {
       )}
       {!isEdit && (
         <div>
-          {props.bookSectionDetail.type !== "summary" && (
+          {/* {props.bookSectionDetail.type !== "summary" && ( */}
             <h4>{getSectionType(props.bookSectionDetail.type)?.description}</h4>
-          )}
-          {props.bookSectionDetail.type === "summary" && (
+          {/* )} */}
+          {/* {props.bookSectionDetail.type === "summary" && (
             <h4>{props.bookSection.title}</h4>
-          )}
+          )} */}
           {!isGenerating && (
             <div
               dangerouslySetInnerHTML={{

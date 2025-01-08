@@ -1,0 +1,16 @@
+.head-editor {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 12px;
+}
+
+.head-editor__controls {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 12px;
+  justify-content: flex-start;
+}
+
+.head-editor__controls .basicui-button {
+  border-radius: 24px;
+}
